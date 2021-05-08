@@ -15,7 +15,7 @@ const sequelize = require('./config/config');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-    secret: 'Lo siento para las problemas',
+    secret: 'No manches wey',
     cookie: {},
     resave: false,
     saveUninitialized: true,
