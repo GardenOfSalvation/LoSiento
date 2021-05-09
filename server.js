@@ -19,9 +19,9 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 const sess = {
+    resave: true,
     secret: 'No manches wey',
     cookie: {},
-    resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
       db: sequelize
@@ -37,12 +37,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // set up serialization for passport
-passport.serializeUser(function(user, done) {
-    done(null, {id: user.id, email: user.email, role: user.role});
+passport.serializeUser((user, done) => {
+    console.log(user);
+    done(null, {username: user.username});
 });
   
 passport.deserializeUser(function(user, done) {
-    done(null, {id: user.id, email: user.email, role: user.role});
+    done(null, {username: user.username});
 });
 
 // initialize handlebars { helpers }
