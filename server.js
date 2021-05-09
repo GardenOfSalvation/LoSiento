@@ -14,6 +14,10 @@ const PORT = process.env.PORT || 3001;
 const sequelize = require('./config/config');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+// import passport
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+
 const sess = {
     secret: 'No manches wey',
     cookie: {},
@@ -27,6 +31,19 @@ const sess = {
 
 // tell express to use sessions
 app.use(session(sess));
+
+// tell app to use passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// set up serialization for passport
+passport.serializeUser(function(user, done) {
+    done(null, {id: user.id, email: user.email, role: user.role});
+});
+  
+passport.deserializeUser(function(user, done) {
+    done(null, {id: user.id, email: user.email, role: user.role});
+});
 
 // initialize handlebars { helpers }
 const hbs = exphbs.create();
