@@ -14,13 +14,9 @@ const PORT = process.env.PORT || 3001;
 const sequelize = require('./config/config');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-// import passport
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-
 const sess = {
     resave: true,
-    secret: 'No manches wey',
+    secret: 'ttefovvomxgabdgyakvvjegosdqalneequsbet',
     cookie: {},
     saveUninitialized: true,
     store: new SequelizeStore({
@@ -31,20 +27,6 @@ const sess = {
 
 // tell express to use sessions
 app.use(session(sess));
-
-// tell app to use passport
-app.use(passport.initialize());
-app.use(passport.session());
-
-// set up serialization for passport
-passport.serializeUser((user, done) => {
-    console.log(user);
-    done(null, {username: user.username});
-});
-  
-passport.deserializeUser(function(user, done) {
-    done(null, {username: user.username});
-});
 
 // initialize handlebars { helpers }
 const hbs = exphbs.create();
