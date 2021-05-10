@@ -16,6 +16,10 @@ Lesson.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false 
+        },
         words: {
             type: DataTypes.STRING,
             allowNull: false
@@ -25,7 +29,8 @@ Lesson.init(
             references: {
                 model: 'user',
                 key: 'id'
-            }
+            },
+            allowNull: true
         },
         public: {
             type: DataTypes.BOOLEAN, 
@@ -37,7 +42,7 @@ Lesson.init(
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'post',
+        modelName: 'lesson',
     }
 );
 

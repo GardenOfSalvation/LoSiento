@@ -1,6 +1,9 @@
 // History.js (tracks each lesson completed by a user)
 // so fields would be id, date_started,date_completed, user_id, lesson_id
 
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/config');
+
 class History extends Model {}
 
 History.init(
@@ -36,7 +39,7 @@ History.init(
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'post',
+        modelName: 'history',
     }
 );
 
