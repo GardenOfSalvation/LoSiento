@@ -1,4 +1,4 @@
-// IBM WATSON LANGUAGE TRANSLATOR MODELS
+// IBM WATSON LANGUAGE TRANSLATOR MODEL
 const LanguageTranslatorV3 = require('ibm-watson/language-translator/v3');
 const {IamAuthenticator} = require('ibm-watson/auth');
 
@@ -14,7 +14,7 @@ module.exports = function(app) {
 
 
   // START ALL VOCAB/LANGUAGE RELATED CALLS
- //SET UP NEEDED = VOCAB JS PEND 
+ //SET UP NEEDED = VOCAB JS PEND ?
  // NEED ONCLICK TRANSLATE TO STORE FORM VALUES IN OBJECT TO POST TO DB -INDEX?
   app.get('/api/???', (req, res) => {
     db.vocab.findAll({
