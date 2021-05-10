@@ -14,9 +14,12 @@ const PORT = process.env.PORT || 3001;
 const sequelize = require('./config/config');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+// import settings from .env
+require('dotenv').config();
+
 const sess = {
     resave: true,
-    secret: 'ttefovvomxgabdgyakvvjegosdqalneequsbet',
+    secret: process.env.SESSION_SECRET,
     cookie: {},
     saveUninitialized: true,
     store: new SequelizeStore({
