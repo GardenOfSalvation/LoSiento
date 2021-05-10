@@ -20,11 +20,6 @@ Lesson.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        date_created: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: DataTypes.NOW,
-        },
         created_by: {
             type: DataTypes.INTEGER,
             references: {
@@ -39,7 +34,7 @@ Lesson.init(
     },
     {
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
         modelName: 'post',
