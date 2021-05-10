@@ -18,8 +18,7 @@ async function loginUser(event) {
         document.location.replace('/');
       } else {
         // change this later 
-        console.log('Failed.');
-        console.log(response);
+        document.location.replace('/login?error');
       }
 }
 

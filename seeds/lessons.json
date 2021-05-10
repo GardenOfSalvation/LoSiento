@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Test Lesson 1",
+        "words": "cat,dog,mouse,bird,rabbit",
+        "created_by": null,
+        "public": true
+    },
+    {
+        "title":"Test Lesson 2",
+        "words": "blue,purple,yellow,orange,red",
+        "created_by": null,
+        "public": true
+    }
+]

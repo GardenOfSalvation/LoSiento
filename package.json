@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "seed": "node seeds/seed.js"
+    "seed": "node seeds/seed.js",
+    "devStart": "nodemon server.js"
   },
   "author": "",
   "license": "MIT",
@@ -18,6 +19,11 @@
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.0",
     "mysql2": "^2.0.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "sequelize": "^5.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
