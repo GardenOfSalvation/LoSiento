@@ -19,6 +19,10 @@ History.init(
             allowNull: true,
             defaultValue: DataTypes.NOW,
         },
+        score: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
