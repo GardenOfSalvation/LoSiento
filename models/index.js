@@ -31,3 +31,8 @@ module.exports = {
     Lesson, 
     User
 };
+
+
+// might need to add Languages table
+// might need to add Language data field to history
+
