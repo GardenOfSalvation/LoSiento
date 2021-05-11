@@ -2,25 +2,62 @@
 const router = require('express').Router();
 const Lesson = require('../../models/Lesson');
 
-// this route will build a lesson into whatever language you want 
+// import Watson
+const LanguageTranslatorV3 = require('ibm-watson/language-translator/v3');
+const { IamAuthenticator } = require('ibm-watson/auth');
+
+// bring in environment variables
+require('dotenv').config();
+
+// configure Watson
+const languageTranslator = new LanguageTranslatorV3({
+  version: '2018-05-01',
+  authenticator: new IamAuthenticator({
+    apikey: process.env.LANGUAGE_TRANSLATOR_APIKEY,
+  }),
+  serviceUrl: process.env.LANGUAGE_TRANSLATOR_URL,
+});
+
+// this route will build a lesson into whatever language you want (right now hardcoded to Spanish)
 router.post('/:id', async (req, res) => {
     try {
+        //const language = req.body.language; -- NOT USED RIGHT NOW
+
+        // get lesson data from database
         const lessonData = await Lesson.findByPk(req.params.id);
-        const language = req.body.language;
+        const wordsString = lessonData.words;
 
-        const words = lessonData.words.split(',');
+        console.log(wordsString)
 
-        // write code to build lesson with Watson here
+        // send lesson to Watson in JSON format
+        const translate = {
+            text: JSON.stringify(wordsString),
+            modelId: 'en-es',
+          };
+          
+        // query watson, handle response (this took some trial and error)
+        languageTranslator.translate(translate)
+            .then(translationResult => {
+                let results = JSON.parse(translationResult.result.translations[0].translation);
+                let formattedResults = results.split(', ');
 
-        // return Watson generated words/answers pairs here
-        let answerKey = [];
+                // console.log(formattedResults)
 
-        // watson will be used below to fill in language and corresponding word
-        for(let i = 0; i < words.length; i++) {
-            answerKey.push({ en: words[i], language: ''});
-        };
+                // return Watson generated words/answers pairs here
+                let answerKey = [];
+                let wordsArray = wordsString.split(',');
 
-        res.json(answerKey);
+                // watson will be used below to fill in language and corresponding word
+                for(let i = 0; i < wordsArray.length; i++) {
+                    answerKey.push({ en: wordsArray[i], es: formattedResults[i]});
+                };
+
+                // send complete lesson back to front end 
+                res.json(answerKey);
+            })
+            .catch(err => {
+                console.log('error:', err);
+            });
     }
     catch(error) {
         res.json(error);

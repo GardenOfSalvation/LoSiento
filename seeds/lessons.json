@@ -28,5 +28,11 @@
         "words": "doctor,eye,arm,leg,face,finger,stomach,sick,pain,foot",
         "created_by": null,
         "public": true
+    },
+    {
+        "title":"Travel phrases",
+        "words": "Where is the airport?,I need a taxi,I need two tickets to,please,thank you,Can you help me?,Do you speak English?,I do not know where I am,Can I use the phone?,Excuse me",
+        "created_by": null,
+        "public": true
     }
 ]
