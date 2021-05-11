@@ -1,5 +1,4 @@
 // lesson routes
-
 const router = require('express').Router();
 const Lesson = require('../../models/Lesson');
 
