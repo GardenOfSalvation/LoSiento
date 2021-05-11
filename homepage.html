@@ -20,13 +20,15 @@
 <body>
 
 
-    <header id="topLinks">this is the header</header>
+    <header>
+        <h1 id="headerWords">This is Project LoSiento</h1>
+    </header>
 
-    <div id="mainSection" class="flex justify-center grid">
+    <div id="mainSection" class="flex justify-center grid grid-cols-2">
 
-        <div id="helloSection" class="col-span-8">goes to the left, words that mean hello in different languages</div>
+        <div id="helloSection">goes to the left, words that mean hello in different languages</div>
 
-        <div id="signInSection" class="col-span-4">
+        <div id="signInSection">
 
             <div class="w-full max-w-xs">
                 <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -48,7 +50,7 @@
                         <p class="text-red-500 text-xs italic">Please choose a password.</p>
                     </div>
                     <div class="flex items-center justify-between">
-                        <button
+                        <button id="signInButton"
                             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                             type="button">
                             Sign In
@@ -67,6 +69,8 @@
         </div>
 
     </div>
+
+
 
     <footer>This was made by some people at the UNC Coding Bootcamp</footer>
 

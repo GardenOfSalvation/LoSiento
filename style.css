@@ -13,12 +13,72 @@ header {
     background-color: #0b132b;
     height: 20%;
     color: white;
+    font-size: 50px;
+    font-family: Oxygen;
 }
+
+#headerWords {
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+}
+
+
 
 #helloSection {
     padding: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 #signInSection {
     padding: 10px;
+    position: relative;
+    top: 20%;
+    padding-left: 50%;
+}
+
+#signInButton {
+    padding-right: 5px;
+}
+
+#cardContainer {
+    display: flex;
+    justify-content: center;
+
+}
+
+#indexCard {
+    padding-left: 5%;
+}
+
+#score {
+    font-size: 20px;
+}
+
+#postCard {
+margin-top: 15%;
+    height: 300px;
+    width: 500px;
+}
+#postCardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+}
+#apiWord {
+    font-size: 50px;
+}
+#genericText {
+    font-size: 20px;
+    padding-top: 10%;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20%;
+
 }
