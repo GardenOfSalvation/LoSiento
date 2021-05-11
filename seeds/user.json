@@ -1,7 +1,27 @@
 [
     {
-        "username": "TestUser",
-        "email": "test@test.com",
+        "username": "JohnSmith",
+        "email": "test@test1.com",
         "password": "password1"
+    },
+    {
+        "username": "FredSmith",
+        "email": "test@test2.com",
+        "password": "password2"
+    },
+    {
+        "username": "JohnnyWalker",
+        "email": "test@test3.com",
+        "password": "password3"
+    },
+    {
+        "username": "JoseCuervo",
+        "email": "test@test4.com",
+        "password": "password4"
+    },
+    {
+        "username": "FredWalker",
+        "email": "test@test5.com",
+        "password": "password5"
     }
 ]
