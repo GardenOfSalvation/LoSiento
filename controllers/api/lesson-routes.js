@@ -1,5 +1,4 @@
 // lesson routes
-
 const router = require('express').Router();
 const Lesson = require('../../models/Lesson');
 
@@ -12,11 +11,13 @@ router.post('/:id', async (req, res) => {
         // write code to build lesson with Watson here
 
         // return Watson generated words/answers pairs here
-
         let test = [
             {message: `${language} quiz generated using IBM's Watson!`},
             {english: "cat", spanish: "el gato"},
             {english: "dog", spanish: "el perro"},
+            {english: "mouse", spanish: "el gato"},
+            {english: "bird", spanish: "el perro"},
+            {english: "rabbit", spanish: "el perro"}
         ];
 
         res.json(test);
