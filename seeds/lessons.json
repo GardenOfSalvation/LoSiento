@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Animals",
+        "words": "cat,dog,mouse,bird,rabbit,pig,horse,elephant,lizard,lion",
+        "created_by": null,
+        "public": true
+    },
+    {
+        "title":"Colors",
+        "words": "blue,purple,yellow,orange,red,brown,black,white,silver,green",
+        "created_by": null,
+        "public": true
+    },
+    {
+        "title":"People",
+        "words": "lawyer,policeman,waiter,teacher,doctor,student,child,adult,manager,soldier",
+        "created_by": null,
+        "public": true
+    },
+    {
+        "title":"City Life",
+        "words": "building,policeman,street,directions,hotel,park,museum,bar,restaurant,taxi",
+        "created_by": null,
+        "public": true
+    },
+    {
+        "title":"Medical",
+        "words": "doctor,eye,arm,leg,face,finger,stomach,sick,pain,foot",
+        "created_by": null,
+        "public": true
+    },
+    {
+        "title":"Travel phrases",
+        "words": "Where is the airport?,I need a taxi,I need two tickets to,please,thank you,Can you help me?,Do you speak English?,I do not know where I am,Can I use the phone?,Excuse me",
+        "created_by": null,
+        "public": true
+    }
+]
