@@ -6,7 +6,7 @@ const lessonData = require('./lessons.json');
 
 async function seedDatabase() {
     await sequelize.sync({ force: true });
-    
+
     // insert fake users
     const users = await User.bulkCreate(userData, {individualHooks: true });
 
@@ -23,7 +23,6 @@ async function seedDatabase() {
                 lesson_id: lessons[i].id,
                 score: randomScore
             });
-        
         }
     }
 
