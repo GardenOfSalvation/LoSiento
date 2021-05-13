@@ -18,9 +18,9 @@ async function signupUser(event) {
       if (response.status === 200) {
         document.location.replace('/');
       } else {
-        // change this later 
-        document.location.replace('/signup?error');
+        // display error message 
+        document.getElementById('error_message').innerHTML = 'Error creating user!';
       }
 }
 
-document.getElementById('signup_form').addEventListener('submit', signupUser);
+document.getElementById('signup_form').addEventListener('click', signupUser);

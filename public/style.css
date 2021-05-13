@@ -1,97 +1,94 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    background-color: #cee5f2;
-    height: 800px;
+  background-color: #cee5f2;
+  height: 800px;
 }
 
 header {
-    background-color: #0b132b;
-    height: 20%;
-    color: white;
-    font-size: 50px;
-    font-family: Oxygen;
+  background-color: #0b132b;
+  height: 20%;
+  color: white;
+  font-size: 50px;
+  font-family: Oxygen;
 }
 
 #headerWords {
-    display: flex;
-    justify-content: center;
-    padding-top: 2%;
+  display: flex;
+  justify-content: center;
+  padding-top: 2%;
 }
 
-
-
 #helloSection {
-    padding: 10px;
-    display: flex;
-    justify-content: center;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 #signInSection {
-    padding: 10px;
-    position: relative;
-    top: 20%;
-    padding-left: 50%;
+  padding: 10px;
+  position: relative;
+  top: 20%;
+  padding-left: 50%;
 }
 
 #signInButton {
-    padding-right: 5px;
+  padding-right: 5px;
 }
 
 #signUpHeader {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  height: 50px;
 }
 
 #signUpMessage {
-    margin-top: 2%;
+  margin-top: 2%;
 }
 
 #cardContainer {
-    display: flex;
-    justify-content: center;
-
+  display: flex;
+  justify-content: center;
 }
 
 #indexCard {
-    padding-left: 5%;
+  padding-left: 5%;
 }
 
 #score {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 #score {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 #postCard {
-margin-top: 15%;
-    height: 300px;
-    width: 500px;
+  margin-top: 15%;
+  height: 300px;
+  width: 500px;
 }
 #postCardContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15%;
 }
 #apiWord {
-    font-size: 50px;
+  font-size: 50px;
 }
 #genericText {
-    font-size: 20px;
-    padding-top: 10%;
+  font-size: 20px;
+  padding-top: 10%;
 }
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20%;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20%;
 }

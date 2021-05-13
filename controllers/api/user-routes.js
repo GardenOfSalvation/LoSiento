@@ -10,17 +10,12 @@ router.post('/', async (req,res) => {
             email: req.body.email
         });
 
-        if(!newUser) {
-            req.status(500).json({ message: 'Error creating new user!' });
-        }
-
         req.session.save(() => {
             req.session.userId = newUser.id;
             req.session.username = newUser.username;
             req.session.loggedIn = true;
+            res.status(200).json({ message: 'User created successfully!', newUser })
         });
-
-        res.status(200).json({ message: 'User created successfully!', newUser })
     }
     catch (error) {
         res.status(500).json(error);
@@ -126,9 +121,22 @@ router.post('/login', async (req, res) => {
     
           res.json({ user, message: 'You are now logged in!' });
         });
+
       } catch (err) {
         res.status(400).json(err);
       }
+});
+
+// create route for logging user out
+router.post('/logout', async (req, res) => {
+    if(req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(200).end();
+        });
+    }
+    else {
+        res.status(404).end();
+    }
 });
 
 // delete user

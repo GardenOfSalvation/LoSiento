@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const authorizeHelper = require('../utils/auth');
 
-router.get('/', authorizeHelper, async (req,res) => {
-    res.render('homepage');
+router.get('/', async (req,res) => {
+    let logSwitch = req.session.loggedIn;
+    res.render('homepage', {logSwitch});
 });
 
 router.get('/login', (req, res) => {
@@ -25,7 +26,7 @@ router.get('/user/password', authorizeHelper, (req, res) => {
     res.render('update_password');
 });
 
-router.get('/lesson', authorizeHelper, (req, res) => {
+router.get('/lessons', authorizeHelper, (req, res) => {
     res.render('all_lessons');
 });
 
