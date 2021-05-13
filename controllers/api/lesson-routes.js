@@ -18,7 +18,7 @@ const languageTranslator = new LanguageTranslatorV3({
   serviceUrl: process.env.LANGUAGE_TRANSLATOR_URL,
 });
 
-// this route will build a lesson into whatever language you want (right now hardcoded to Spanish)
+// this route will build a lesson into whatever language you want (right now hardcoded to Spanish) http://localhost:3001/lesson/1
 router.post('/:id', async (req, res) => {
     try {
         //const language = req.body.language; -- NOT USED RIGHT NOW
