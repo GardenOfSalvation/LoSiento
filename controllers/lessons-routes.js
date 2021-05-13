@@ -22,10 +22,13 @@ router.get('/lessons', authorizeHelper, async (req, res) => {
     try {
         const dbLessons = await Lesson.findAll();
         const lessons = dbLessons.map((lessonPlans)=>{return {title:lessonPlans.title, id:lessonPlans.id}});
-        res.render('all_lessons', {lessons});
+
+        let logSwitch = req.session.loggedIn;
+
+        res.render('all_lessons', {logSwitch, lessons});
     }
     catch(error) {
-        res.render('all_lessons', {error});
+        res.render('all_lessons', {logSwitch, error});
     }
 });
 
@@ -68,12 +71,15 @@ router.get('/lesson/:id', authorizeHelper, async (req, res) => {
                     lesson_id: req.params.id
                 });
 
+                // check to see if user logged in
+                let logSwitch = req.session.loggedIn;
+
                 // send complete lesson back to front end 
-                res.render('single_lesson', {cards:answerKey});
+                res.render('single_lesson', {logSwitch, cards:answerKey});
             })
             .catch(err => {
                 console.log('error:', err);
-                res.render('single_lesson', {error:err});
+                res.render('single_lesson', {logSwitch, error:err});
             });
     }
     catch(error) {
