@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const authorizeHelper = require('../utils/auth');
-const Lesson = require('../models/Lesson');
+const { Lesson, History } = require('../models/');
+
 // import Watson
 const LanguageTranslatorV3 = require('ibm-watson/language-translator/v3');
 const { IamAuthenticator } = require('ibm-watson/auth');
@@ -18,20 +19,20 @@ const languageTranslator = new LanguageTranslatorV3({
 });
 
 router.get('/lessons', authorizeHelper, async (req, res) => {
-    
     try {
         const dbLessons = await Lesson.findAll();
         const lessons = dbLessons.map((lessonPlans)=>{return {title:lessonPlans.title, id:lessonPlans.id}});
-        res.render('all_lessons', {lessons});
+
+        let logSwitch = req.session.loggedIn;
+
+        res.render('all_lessons', {logSwitch, lessons});
     }
     catch(error) {
-        res.render('all_lessons', {error});
+        res.render('all_lessons', {logSwitch, error});
     }
-    });
+});
 
 router.get('/lesson/:id', authorizeHelper, async (req, res) => {
-    
-   
     try {
         //const language = req.body.language; -- NOT USED RIGHT NOW
 
@@ -49,7 +50,7 @@ router.get('/lesson/:id', authorizeHelper, async (req, res) => {
           
         // query watson, handle response (this took some trial and error)
         languageTranslator.translate(translate)
-            .then(translationResult => {
+            .then(async translationResult => {
                 let results = JSON.parse(translationResult.result.translations[0].translation);
                 let formattedResults = results.split(', ');
 
@@ -64,12 +65,21 @@ router.get('/lesson/:id', authorizeHelper, async (req, res) => {
                     answerKey.push({ en: wordsArray[i], es: formattedResults[i]});
                 };
 
+                // create history entry 
+                const newHistory = await History.create({
+                    user_id: req.session.userId,
+                    lesson_id: req.params.id
+                });
+
+                // check to see if user logged in
+                let logSwitch = req.session.loggedIn;
+
                 // send complete lesson back to front end 
-                res.render('single_lesson', {cards:answerKey});
+                res.render('single_lesson', {logSwitch, cards:answerKey});
             })
             .catch(err => {
                 console.log('error:', err);
-                res.render('single_lesson', {error:err});
+                res.render('single_lesson', {logSwitch, error:err});
             });
     }
     catch(error) {

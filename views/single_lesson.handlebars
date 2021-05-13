@@ -1,50 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="flip-card-board">
+    {{#each cards}}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lessons Page</title>
+    <div class="flip-card-container">
+        <div class="flip-card">
 
-    <link rel="stylesheet" href="public/style.css">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+            <div class="flip-card-front">
+                <p>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+                    {{this.en}}
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Oxygen&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-</head>
-
-<body>
-    <div class="flip-card-board">
-        {{#each cards}}
-
-        <div class="flip-card-container">
-            <div class="flip-card">
-
-                <div class="flip-card-front">
-                    <p>
-
-                        {{this.en}}
-
-                    </p>
-                </div>
-                <div class="flip-card-back">
-                    <p>
-                        {{this.es}}
-                    </p>
-                </div>
+                </p>
+            </div>
+            <div class="flip-card-back">
+                <p>
+                    {{this.es}}
+                </p>
             </div>
         </div>
-
-        {{/each}}
     </div>
 
-</body>
-
-</html>
+    {{/each}}
+</div>

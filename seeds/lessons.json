@@ -34,5 +34,47 @@
         "words": "Where is the airport?,I need a taxi,I need two tickets to,please,thank you,Can you help me?,Do you speak English?,I do not know where I am,Can I use the phone?,Excuse me",
         "created_by": null,
         "public": true
+    },
+    {
+        "title":"Numbers",
+        "words": "One, two, three, four, five, six, seven, eight, nine, ten",
+        "created_by": null,
+        "public": true
+    },
+    {
+        "title":"Days of the week",
+        "words": "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday",
+        "created_by": null,
+        "public": true
+    },
+    {
+        "title":"Food 1",
+        "words": "I eat bread, Do you eat apples?, I drink, I drink milk, bread, I eat apples, do you drink water?, meat, fish, orange juice",
+        "created_by": null,
+        "public": true
+    },
+    {
+        "title":"Travel phrases 2",
+        "words": "In the museum,where is the hospital?,bank,your money,the bathroom,closed,i need a ticket,supermarket,hat,coat",
+        "created_by": null,
+        "public": true
+    },
+    {
+        "title":"Shopping",
+        "words": "credit card,expensive,cheap,cash,dressing room,delivery,buy,sell,store,wallet,return",
+        "created_by": null,
+        "public": true
+    },
+    {
+        "title":"Home Life",
+        "words": "door,wall,floor,stairs,kitchen,bedroom,couch,living room,tv,yard",
+        "created_by": null,
+        "public": true
+    },
+    {
+        "title":"Grammar",
+        "words": "this,these,those,they,them,she,her,it,him,hers",
+        "created_by": null,
+        "public": true
     }
 ]

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,3 +55,20 @@
 =======
 <h1>Hey, welcome to LoSiento</h1>
 >>>>>>> b96974aeaa0cba9b234fb2023c56f0a350608dd8
+=======
+<div class="text-xl text-center">
+    Welcome to LoSiento, the best way to learn a language.<br><br>
+    See what other people are learning!
+</div>
+
+{{#each history as |entry|}}
+<div class="bg-white flex m-5">
+    <div class="m-4">
+        <h2 class="text-l">{{entry.user.username}}</h2>
+    </div>
+    <div class="m-4">
+        Studied <b>{{entry.lesson.title}}</b> on {{formatDate entry.date_completed}}
+    </div>
+</div>
+{{/each}}
+>>>>>>> ad5007d00f344824fc4be6c9bdab3579bd004488
