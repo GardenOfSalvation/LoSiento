@@ -17,6 +17,9 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 // import settings from .env
 require('dotenv').config();
 
+// bring in helpers
+const helpers = require('./utils/helpers');
+
 const sess = {
     resave: true,
     secret: process.env.SESSION_SECRET,
@@ -32,7 +35,7 @@ const sess = {
 app.use(session(sess));
 
 // initialize handlebars { helpers }
-const hbs = exphbs.create();
+const hbs = exphbs.create({ helpers });
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
