@@ -2,7 +2,7 @@ const History = require('./History');
 const Lesson = require('./Lesson');
 const User = require('./User');
 
-// associate history table to user table so that user history is deleted when user is deleted
+// Associate History entries with both Users and Lessons
 
 History.belongsTo(User, {
     foreignKey: 'user_id',
@@ -14,8 +14,17 @@ User.hasMany(History, {
     onDelete: 'CASCADE'
 });
 
-// build in functionality for when users are allowed to create lessons (anticipated)
+History.belongsTo(Lesson, {
+    foreignKey: 'lesson_id',
+    onDelete: 'CASCADE'
+})
 
+Lesson.hasMany(History, {
+    foreignKey: 'lesson_id',
+    onDelete: 'CASCADE'
+})
+
+/****** Saving for future functionality - when users can create lessons 
 Lesson.belongsTo(User, {
     foreignKey: 'created_by',
     onDelete: 'CASCADE'
@@ -25,6 +34,7 @@ User.hasMany(Lesson, {
     foreignKey: 'created_by',
     onDelete: 'CASCADE'
 })
+**/
 
 module.exports = {
     History, 
