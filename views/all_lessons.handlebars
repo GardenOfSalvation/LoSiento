@@ -20,21 +20,13 @@
 </head>
 <body>
 
-    <div class="flip-card-container">
-    <div class="flip-card">
-        <div class="flip-card-front">
-            <p>
-                Lessons
-                {{words}}
-              </p>
-        </div>
-        <div class="flip-card-back">
-            <p>
-                Hola
-              </p>
-        </div>
-    </div>
-    </div>
-    
+<h2>LESSONS</h2>
+
+<ul class="Lessons_list">
+    {{#each lessons}}
+    <li><a href= "/lesson/{{this.id}}">{{this.title}}</a></li>
+    {{/each}}
+</ul>
+
 </body>
 </html>

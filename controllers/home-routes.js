@@ -26,14 +26,4 @@ router.get('/user/password', authorizeHelper, (req, res) => {
     res.render('update_password');
 });
 
-router.get('/lessons', authorizeHelper, (req, res) => {
-    res.render('all_lessons');
-});
-
-router.get('/lesson/:id', authorizeHelper, (req, res) => {
-    // grab lesson id, send it to view
-    let lessonId = req.params.id;
-    res.render('single-lesson', lessonId);
-});
-
 module.exports = router;
