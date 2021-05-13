@@ -20,7 +20,7 @@ The app utilizes a database of custom, ten-word lessons that are originally writ
 
 ## Deployed
 
-Our app is current deployed on Heroku and accessible to anyone to try out. Please visit URL to see our app's functionality.
+Our app is currently deployed on Heroku and accessible to anyone to try out. Please visit **_URL_** to see our app's functionality.
 
 ## Installation
 
