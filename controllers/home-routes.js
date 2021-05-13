@@ -2,6 +2,7 @@ const router = require('express').Router();
 const authorizeHelper = require('../utils/auth');
 
 router.get('/', async (req,res) => {
+    // display history so we can show what users are up to 
     let logSwitch = req.session.loggedIn;
     res.render('homepage', {logSwitch});
 });
