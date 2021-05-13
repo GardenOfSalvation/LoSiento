@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,44 +21,50 @@
 
 
 </head>
+
 <body>
+
+    <div>
+        <h1>rename to lessons</h1>                               
+    </div>
 
     <header>
         <h1 id="headerWords">Hey, welcome to LoSiento</h1>
     </header>
 
+    <div id="subHeader">
+        <h2>
+            Try to guess the words before you flip!
+        </h2>
+    </div>
 
-        <div id="indexCard">
-            <div id="postCard" class="bg-white shadow p-3 rounded lg:w-64">
-                <div id="postCardContent" class="mt-6">
-                    <p id="hpOptionOne" class="text-lg text-bold tracking-wide text-gray-600 mb-2">
-                        Learn some new words!
+    <div id="cardContainer">
+
+        <div id="flipCard" class="flip-card-container">
+            <div class="flip-card">
+                <div id="cardFront" class="flip-card-front">
+                    <p id="englishWord">
+                        Hello
                     </p>
-                    <p id="genericText" class="text-sm text-gray-600 font-hairline">
-                        
+                </div>
+                <div id="cardBack" class="flip-card-back">
+                    <p id="translatedWord">
+                        Hola
                     </p>
                 </div>
             </div>
         </div>
 
-        <div id="indexCard">
-            <div id="postCard" class="bg-white shadow p-3 rounded lg:w-64">
-                <div id="postCardContent" class="mt-6">
-                    <p id="hpOptionTwo" class="text-lg text-bold tracking-wide text-gray-600 mb-2">
-                        Learn some new words!
-                    </p>
-                    <p id="genericText" class="text-sm text-gray-600 font-hairline">
-                        
-                    </p>
-                </div>
-            </div>
-        </div>
+        <button id="nextButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Next Word
+        </button>
+
+    </div>
 
 
-    <div></div>
 
-    <div></div>
 
-    
+
 </body>
+
 </html>
