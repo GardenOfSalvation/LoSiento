@@ -1,7 +1,6 @@
-// lesson routes
 const router = require('express').Router();
-const Lesson = require('../../models/Lesson');
-
+const authorizeHelper = require('../utils/auth');
+const Lesson = require('../models/Lesson');
 // import Watson
 const LanguageTranslatorV3 = require('ibm-watson/language-translator/v3');
 const { IamAuthenticator } = require('ibm-watson/auth');
@@ -18,8 +17,21 @@ const languageTranslator = new LanguageTranslatorV3({
   serviceUrl: process.env.LANGUAGE_TRANSLATOR_URL,
 });
 
-// this route will build a lesson into whatever language you want (right now hardcoded to Spanish) http://localhost:3001/lesson/1
-router.post('/:id', async (req, res) => {
+router.get('/lessons', authorizeHelper, async (req, res) => {
+    
+    try {
+        const dbLessons = await Lesson.findAll();
+        const lessons = dbLessons.map((lessonPlans)=>{return {title:lessonPlans.title, id:lessonPlans.id}});
+        res.render('all_lessons', {lessons});
+    }
+    catch(error) {
+        res.render('all_lessons', {error});
+    }
+    });
+
+router.get('/lesson/:id', authorizeHelper, async (req, res) => {
+    
+   
     try {
         //const language = req.body.language; -- NOT USED RIGHT NOW
 
@@ -53,26 +65,15 @@ router.post('/:id', async (req, res) => {
                 };
 
                 // send complete lesson back to front end 
-                res.json(answerKey);
+                res.render('single_lesson', {cards:answerKey});
             })
             .catch(err => {
                 console.log('error:', err);
+                res.render('single_lesson', {error:err});
             });
     }
     catch(error) {
-        res.json(error);
-    }
-});
-
-// this route returns all lessons
-router.get('/', async (req, res) => {
-    try {
-        const lesson = await Lesson.findAll();
-
-        res.json(lesson);
-    }
-    catch(error) {
-        res.json(error);
+        res.render('single_lesson', {error});
     }
 });
 
