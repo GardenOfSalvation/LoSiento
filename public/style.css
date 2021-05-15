@@ -180,13 +180,13 @@ footer {
     margin: 10px;
   }
   .flip-card-front {
-    background-color: #333;
+    background-color: #0b1320;
     color: #fff;
     transform: rotateY(180deg);
     transition:1s;
   }
   .flip-card-back {
-    background-color: #517fa4;
+    background-color: #f4743f;
     color: #fff;
     transform: rotateY(180deg);
   }
