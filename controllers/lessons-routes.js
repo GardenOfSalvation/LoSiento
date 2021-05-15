@@ -33,6 +33,9 @@ router.get('/lessons', authorizeHelper, async (req, res) => {
 });
 
 router.get('/lesson/:id', authorizeHelper, async (req, res) => {
+    // check to see if user logged in
+    let logSwitch = req.session.loggedIn;
+
     try {
         //const language = req.body.language; -- NOT USED RIGHT NOW
 
@@ -70,9 +73,6 @@ router.get('/lesson/:id', authorizeHelper, async (req, res) => {
                     user_id: req.session.userId,
                     lesson_id: req.params.id
                 });
-
-                // check to see if user logged in
-                let logSwitch = req.session.loggedIn;
 
                 // send complete lesson back to front end 
                 res.render('single_lesson', {logSwitch, cards:answerKey});
