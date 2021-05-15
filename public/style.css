@@ -6,7 +6,11 @@
 
 body {
   background-color: #cee5f2;
-  height: 800px;
+  background-image: url(images/World-Map-PNG-Background-Image.png);
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: -50%;
 }
 
 header {
@@ -20,7 +24,8 @@ header {
 #headerWords {
   display: flex;
   justify-content: center;
-  padding-top: 3%;
+  padding-top: 1%;
+  padding-bottom: 1%;
   font-family: Oxygen;
 }
 
@@ -57,11 +62,17 @@ header {
 }
 
 #mainSection {
-  height: 800px;
   padding-top: 5%;
-  background-image: url(images/World-Map-PNG-Background-Image.png);
 }
 
+#history{ 
+  border-radius:5px;
+  box-shadow: 5px 10px #afbed1;
+}
+#loSiento {
+  position: relative;
+  bottom: 3px;
+}
 
 ul{
   text-decoration: underline;
@@ -113,7 +124,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 20%;
+  position: relative;
+  bottom: -650px;
 }
 
 #subHeader {
