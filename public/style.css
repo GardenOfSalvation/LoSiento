@@ -197,25 +197,27 @@ footer {
     margin: 10px;
   }
   .flip-card-front {
-    /* background-color: #0b1320; */
+   background-color: #0b1320; 
     color: #fff;
     transform: rotateY(180deg);
     transition:1s;
+    visibility:visible;
   }
   .flip-card-back {
-    /* background-color: #f4743f; */
+    background-color: #f4743f; 
     color: #fff;
     transform: rotateY(180deg);
+    visibility: hidden;
   }
 
-#cardFront {
+/* #cardFront {
     background-color: #0b1320;
     font-size: 60px;
 }
 #cardBack {
     background-color: #f4743f;
     font-size: 60px;
-}
+} */
 
 #cardContainer {
     display: flex;
