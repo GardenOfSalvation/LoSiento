@@ -55,3 +55,8 @@ Contact us if you have any questions or want to provide feedback on our code.
 
 Copyright (c) Rony Braswell, Sam Gates, Brian McMullen, and Abner Toribio. All rights reserved.
 Licensed under the [MIT](https://opensource.org/licenses/MIT) license.
+
+
+link to pictures
+
+https://i1.wp.com/www.superlativerecruitment.com/wp-content/uploads/2020/01/World-Map-PNG-Background-Image.png
