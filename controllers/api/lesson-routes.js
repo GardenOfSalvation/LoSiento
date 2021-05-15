@@ -1,6 +1,6 @@
 // lesson routes
 const router = require('express').Router();
-const { Lesson, History } = require('../../models/');
+const Lesson = require('../../models/Lesson');
 
 // import Watson
 const LanguageTranslatorV3 = require('ibm-watson/language-translator/v3');
