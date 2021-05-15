@@ -23,10 +23,12 @@ router.get('/', async (req,res) => {
     res.render('homepage', {logSwitch, history});
 });
 
+// display login page
 router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// display signup page
 router.get('/signup', (req, res) => {
     res.render('signup');
 });

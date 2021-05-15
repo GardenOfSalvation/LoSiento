@@ -1,4 +1,6 @@
 async function signupUser(event) {
+  console.log('HELLO');
+
     event.preventDefault();
 
     const username = document.getElementById('username').value;
@@ -8,6 +10,12 @@ async function signupUser(event) {
 
     if(password !== password2) {
       document.getElementById('error_message').innerHTML = 'Passwords need to match!';
+      
+      return;
+    }
+    
+    if(password.length < 8) {
+      document.getElementById('error_message').innerHTML = 'Password must be at least 8 characters.';
       
       return;
     }
@@ -22,7 +30,7 @@ async function signupUser(event) {
         headers: { 'Content-Type': 'application/json' },
       });
 
-      if (response.status === 200) {
+      if (response.ok) {
         document.location.replace('/');
       } else {
         // display error message 

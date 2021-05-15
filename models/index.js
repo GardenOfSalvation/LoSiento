@@ -43,6 +43,3 @@ module.exports = {
 };
 
 
-// might need to add Languages table
-// might need to add Language data field to history
-
