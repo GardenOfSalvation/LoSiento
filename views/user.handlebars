@@ -1,0 +1,19 @@
+<header id="signUpHeader">
+    <h4 id="signUpMessage" class="text-2xl">Welcome, {{user.username}}!</h4>
+</header>
+
+<div class="bg-grey-lighter min-h-screen flex flex-col">
+    <form name="signupForm">
+        <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center px-2">
+            <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+                <h1 class="mb-8 text-lg text-center">What would you like to do today?</h1>
+                <h5 id="error_message" class="m-2 mb-2 text-center"></h5>
+                <a href="/user/password"
+                    class="inline-block text-lg px-4 py-2 leading-none border rounded text-blue-700 border-blue hover:text-blue-500  mt-4 ">Change
+                    Password</a>
+                <a href="/user/email"
+                    class="inline-block text-lg px-4 py-2 leading-none border rounded text-blue-700 border-blue hover:text-blue-500  mt-4 ">Change
+                    Email</a>
+
+    </form>
+</div>

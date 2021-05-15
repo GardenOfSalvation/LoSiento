@@ -18,7 +18,7 @@ async function loginUser(event) {
         document.location.replace('/');
       } else {
         // change this later 
-        document.location.replace('/login?error');
+        document.getElementById('error').innerHTML = "There was a problem logging you in.";
       }
 }
 
