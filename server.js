@@ -20,6 +20,7 @@ require('dotenv').config();
 // bring in helpers
 const helpers = require('./utils/helpers');
 
+// configure session
 const sess = {
     resave: true,
     secret: process.env.SESSION_SECRET,

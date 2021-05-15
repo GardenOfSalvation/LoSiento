@@ -1,3 +1,4 @@
+// format date helper
 module.exports = {
     formatDate: (timestamp) => {
         let formatTime = new Date(timestamp);

@@ -18,8 +18,10 @@ const languageTranslator = new LanguageTranslatorV3({
   serviceUrl: process.env.LANGUAGE_TRANSLATOR_URL,
 });
 
+// send user lessons main page
 router.get('/lessons', authorizeHelper, async (req, res) => {
     try {
+        // get all lessons from DB, send to page
         const dbLessons = await Lesson.findAll();
         const lessons = dbLessons.map((lessonPlans)=>{return {title:lessonPlans.title, id:lessonPlans.id}});
 
