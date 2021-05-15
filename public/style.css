@@ -29,6 +29,12 @@ header {
   font-family: Oxygen;
 }
 
+#pageHeader{
+  background-color: #0b132b;
+  border-radius: 5px;
+  box-shadow: 5px 10px #f4743f;
+}
+
 #helloSection {
   padding: 10px;
   display: flex;
