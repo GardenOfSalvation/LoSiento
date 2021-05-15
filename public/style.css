@@ -74,15 +74,6 @@ header {
   bottom: 3px;
 }
 
-ul{
-  text-decoration: underline;
-  margin-bottom: 5px;
-}
-
-li {
-  margin-bottom: 5px;
-  text-decoration: underline;
-}
 
 #indexCard {
   padding-left: 5%;
