@@ -56,6 +56,10 @@ header {
  
 }
 
+#mainSection {
+  padding-top: 5%;
+}
+
 #indexCard {
   padding-left: 5%;
 }
