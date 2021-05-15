@@ -54,15 +54,23 @@ header {
 #cardContainer {
   display: flex;
   justify-content: center;
- 
 }
 
 #mainSection {
+  height: 800px;
   padding-top: 5%;
+  background-image: url(images/World-Map-PNG-Background-Image.png);
+}
+
+
+ul{
+  text-decoration: underline;
+  margin-bottom: 5px;
 }
 
 li {
   margin-bottom: 5px;
+  text-decoration: underline;
 }
 
 #indexCard {
@@ -126,10 +134,10 @@ footer {
  * animation flip-vertical-left
  * ----------------------------------------
  */
- @-webkit-keyframes flip-vertical-left {
+@-webkit-keyframes flip-vertical-left {
     0% {
       -webkit-transform: rotateY(0);
-       transform: rotateY(0);
+      transform: rotateY(0);
     }
     100% {
       -webkit-transform: rotateY(-180deg);
@@ -174,7 +182,7 @@ footer {
   }
   
   .flip-card-container:hover .flip-card  {
-       -webkit-animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+      -webkit-animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
               animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
     }
   
@@ -239,7 +247,7 @@ footer {
  * animation flip-vertical-right
  * ----------------------------------------
  */
- @-webkit-keyframes flip-vertical-right {
+@-webkit-keyframes flip-vertical-right {
   0% {
     -webkit-transform: rotateY(0);
             transform: rotateY(0);
