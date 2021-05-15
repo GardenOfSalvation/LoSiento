@@ -31,16 +31,4 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-router.get('/user/', authorizeHelper, (req, res) => {
-    res.render('user');
-});
-
-router.get('/user/email', authorizeHelper, (req, res) => {
-    res.render('update_email');
-});
-
-router.get('/user/password', authorizeHelper, (req, res) => {
-    res.render('update_password');
-});
-
 module.exports = router;

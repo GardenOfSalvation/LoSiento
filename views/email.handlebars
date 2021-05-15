@@ -1,0 +1,42 @@
+<header id="signUpHeader">
+    <h4 id="signUpMessage" class="text-2xl">Change email</h4>
+</header>
+
+
+<form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" id="email_form">
+    <input type="hidden" id="user_id" value="{{user}}">
+    <span id="error" style="color: red" class="text-lg text-centered"></span>
+    <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+            Current password
+        </label>
+        <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="current_password" type="password">
+    </div>
+    <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+            New Email Address
+        </label>
+        <input
+            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="new_email" type="text" placeholder="Email address">
+    </div>
+    <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+            Confirm New Email Address
+        </label>
+        <input
+            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="confirm_email" type="text" placeholder="Confirm email">
+    </div>
+    <div class="flex items-center justify-between">
+        <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit">
+            Change Email
+        </button>
+    </div>
+    <br>
+</form>
+<script src="/js/email.js"></script>

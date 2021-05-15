@@ -22,11 +22,58 @@ router.post('/', async (req,res) => {
     }
 });
 
-// update email 
-router.put('/email/:id', async (req,res) => {
+// update username 
+router.put('/name', async (req,res) => {
     try {
         // authenticate request first
-        const user = await User.findOne({ where: { id: req.params.id } });
+        const user = await User.findOne({ where: { id: req.body.id } });
+    
+        if (!user) {
+          res.status(400).json({ message: 'No user account!' });
+          return;
+        }
+    
+        const validPassword = user.checkPassword(req.body.password);
+    
+        if (!validPassword) {
+          res.status(400).json({ message: 'Password wrong, not updated!' });
+          return;
+        }
+
+        // make sure user doesn't already exist
+        const userExists = await User.findOne({
+            where: {    username: req.body.username     }
+        });
+
+        if(userExists) {
+            res.status(400).json({ message: 'User already exists!' });
+            return;
+        }
+
+        // request is authenticated, continue with updating
+        const updatedUser = await user.update(
+            {   
+                username: req.body.username,
+                password: req.body.password
+            }
+        );
+        
+        if(!updatedUser) {
+            req.status(500).json({ message: 'Error updating user!' });
+        }
+
+        res.status(200).json({ message: 'Username updated successfully!', updatedUser });
+    }
+    catch (error) {
+        res.status(500).json(error);
+    }
+});
+
+// update email 
+router.put('/email', async (req,res) => {
+    try {
+        // authenticate request first
+        const user = await User.findOne({ where: { id: req.body.id } });
     
         if (!user) {
           res.status(400).json({ message: 'No user account!' });
@@ -43,7 +90,8 @@ router.put('/email/:id', async (req,res) => {
         // request is authenticated, continue with updating
         const updatedUser = await user.update(
             {   
-                email: req.body.email
+                email: req.body.email,
+                password: req.body.password
             }
         );
         
@@ -59,10 +107,10 @@ router.put('/email/:id', async (req,res) => {
 });
 
 // update password - can only change password
-router.put('/password/:id', async (req,res) => {
+router.put('/password', async (req,res) => {
     try {
         // authenticate request first
-        const user = await User.findOne({ where: { id: req.params.id } });
+        const user = await User.findOne({ where: { id: req.body.id } });
     
         if (!user) {
           res.status(400).json({ message: 'No user account!' });
