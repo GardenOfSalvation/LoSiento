@@ -23,38 +23,27 @@ router.get('/user', authorizeHelper, async (req, res) => {
 router.get('/user/password', authorizeHelper, async (req, res) => {
     // check to see if user logged in
     let logSwitch = req.session.loggedIn;
+    let user = req.session.userId;
 
-    try {
-        //const language = req.body.language; -- NOT USED RIGHT NOW
-
-        // get lesson data from database
-        const lessonData = await Lesson.findByPk(req.params.id);
-        const wordsString = lessonData.words;
-
-        console.log(wordsString)
-    }
-    catch(error) {
-        res.render('single_lesson', {error});
-    }
+    res.render('password', {logSwitch,user});
 });
 
 // change password page
 router.get('/user/email', authorizeHelper, async (req, res) => {
     // check to see if user logged in
     let logSwitch = req.session.loggedIn;
+    let user = req.session.userId;
+    
+    res.render('email', {logSwitch,user});
+});
 
-    try {
-        //const language = req.body.language; -- NOT USED RIGHT NOW
-
-        // get lesson data from database
-        const lessonData = await Lesson.findByPk(req.params.id);
-        const wordsString = lessonData.words;
-
-        console.log(wordsString)
-    }
-    catch(error) {
-        res.render('single_lesson', {error});
-    }
+// change password page
+router.get('/user/name', authorizeHelper, async (req, res) => {
+    // check to see if user logged in
+    let logSwitch = req.session.loggedIn;
+    let user = req.session.userId;
+    
+    res.render('username', {logSwitch,user});
 });
 
 module.exports = router;
