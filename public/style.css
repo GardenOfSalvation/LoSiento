@@ -20,7 +20,8 @@ header {
 #headerWords {
   display: flex;
   justify-content: center;
-  padding-top: 2%;
+  padding-top: 3%;
+  font-family: Oxygen;
 }
 
 #helloSection {
@@ -58,6 +59,10 @@ header {
 
 #mainSection {
   padding-top: 5%;
+}
+
+li {
+  margin-bottom: 5px;
 }
 
 #indexCard {
@@ -184,13 +189,13 @@ footer {
     margin: 10px;
   }
   .flip-card-front {
-    background-color: #0b1320;
+    /* background-color: #0b1320; */
     color: #fff;
     transform: rotateY(180deg);
     transition:1s;
   }
   .flip-card-back {
-    background-color: #f4743f;
+    /* background-color: #f4743f; */
     color: #fff;
     transform: rotateY(180deg);
   }
