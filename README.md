@@ -20,7 +20,7 @@ The app utilizes a database of custom, ten-word lessons that are originally writ
 
 ## Deployed
 
-Our app is currently deployed on Heroku and accessible to anyone to try out. Please visit **_URL_** to see our app's functionality.
+Our app is currently deployed on Heroku and accessible to anyone to try out. Please visit https://losiento.herokuapp.com/ to see our app's functionality.
 
 ## Installation
 
@@ -55,7 +55,6 @@ Contact us if you have any questions or want to provide feedback on our code.
 
 Copyright (c) Rony Braswell, Sam Gates, Brian McMullen, and Abner Toribio. All rights reserved.
 Licensed under the [MIT](https://opensource.org/licenses/MIT) license.
-
 
 link to pictures
 
