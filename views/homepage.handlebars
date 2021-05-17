@@ -7,11 +7,11 @@
 
 
 {{#each history as |entry|}}
-<div id="history" class="bg-white flex m-5">
+<div id="history" class="justify-center bg-white flex m-5">
     <div class="m-4">
-        <h2 class="text-l">{{entry.user.username}}</h2>
+        <h2 class="justify-center">{{entry.user.username}}</h2>
     </div>
-    <div class="m-4">
+    <div class="m-4 justify-center">
         Studied <b>{{entry.lesson.title}}</b> on {{formatDate entry.date_completed}}
     </div>
 </div>
