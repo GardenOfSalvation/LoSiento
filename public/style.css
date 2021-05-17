@@ -29,7 +29,7 @@ header {
   font-family: Oxygen;
 }
 
-#pageHeader{
+#pageHeader {
   background-color: #0b132b;
   border-radius: 5px;
   box-shadow: 5px 10px #f4743f;
@@ -75,8 +75,8 @@ header {
   padding-top: 5%;
 }
 
-#history{ 
-  border-radius:5px;
+#history {
+  border-radius: 5px;
   box-shadow: 5px 10px #afbed1;
 }
 #loSiento {
@@ -84,14 +84,12 @@ header {
   bottom: 3px;
 }
 
-
 #indexCard {
   padding-left: 5%;
 }
 #hpOptionOne {
-    font-size: 40px;
-    display: flex;
-    
+  font-size: 40px;
+  display: flex;
 }
 
 #score {
@@ -130,9 +128,9 @@ footer {
 }
 
 #subHeader {
-    display: flex;
-    justify-content: center;
-    font-size: 60px;
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
 }
 
 /* ----------------------------------------------
@@ -148,80 +146,82 @@ footer {
  * ----------------------------------------
  */
 @-webkit-keyframes flip-vertical-left {
-    0% {
-      -webkit-transform: rotateY(0);
-      transform: rotateY(0);
-    }
-    100% {
-      -webkit-transform: rotateY(-180deg);
-              transform: rotateY(-180deg);
-    }
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
   }
-  @keyframes flip-vertical-left {
-    0% {
-      -webkit-transform: rotateY(0);
-              transform: rotateY(0);
-    }
-    100% {
-      -webkit-transform: rotateY(-180deg);
-              transform: rotateY(-180deg);
-    }
+  100% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
   }
-  @keyframes flip-vertical-right {
-    0% {
-      -webkit-transform: rotateY(0);
-              transform: rotateY(0);
-    }
-    100% {
-      -webkit-transform: rotateY(-180deg);
-              transform: rotateY(-180deg);
-    }
+}
+@keyframes flip-vertical-left {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
   }
-  
-  
-  .flip-card-container {
-    width: 300px;
-    height: 400px;
-    perspective: 1000px;
-    border-radius:10px;
-    margin: 10px;
+  100% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
   }
-  .flip-card {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 1s;
-    transform-style: preserve-3d;
+}
+@keyframes flip-vertical-right {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
   }
-  
-  .flip-card-container:hover .flip-card  {
-      -webkit-animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-              animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-    }
-  
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius:10px;
-    margin: 10px;
+  100% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
   }
-  .flip-card-front {
-   background-color: #0b1320; 
-    color: #fff;
-    transform: rotateY(180deg);
-    transition:1s;
-    visibility:visible;
-  }
-  .flip-card-back {
-    background-color: #f4743f; 
-    color: #fff;
-    transform: rotateY(180deg);
-    visibility: hidden;
-  }
+}
+
+.flip-card-container {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  border-radius: 10px;
+  margin: 10px;
+}
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-container:hover .flip-card {
+  -webkit-animation: flip-vertical-left 0.4s
+    cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    both;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 10px;
+}
+.flip-card-front {
+  background-color: #0b1320;
+  color: #fff;
+  transform: rotateY(180deg);
+  transition: 1s;
+  visibility: visible;
+}
+.flip-card-back {
+  background-color: #f4743f;
+  color: #fff;
+  transform: rotateY(180deg);
+  visibility: hidden;
+}
 
 /* #cardFront {
     background-color: #0b1320;
@@ -233,24 +233,23 @@ footer {
 } */
 
 #cardContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 6%;
 }
 
+.flip-card-container:hover .flip-card-back {
+  visibility: visible;
+}
 
-  .flip-card-container:hover .flip-card-back {
-    visibility:visible;
-  }
-  
-  .flip-card-board {
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-        }
-  /* ----------------------------------------------
+.flip-card-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* ----------------------------------------------
  * Generated by Animista on 2021-5-12 20:3:53
  * Licensed under FreeBSD License.
  * See http://animista.net/license for more info. 
@@ -265,25 +264,27 @@ footer {
 @-webkit-keyframes flip-vertical-right {
   0% {
     -webkit-transform: rotateY(0);
-            transform: rotateY(0);
+    transform: rotateY(0);
   }
   100% {
     -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
+    transform: rotateY(180deg);
   }
 }
 @keyframes flip-vertical-right {
   0% {
     -webkit-transform: rotateY(0);
-            transform: rotateY(0);
+    transform: rotateY(0);
   }
   100% {
     -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
+    transform: rotateY(180deg);
   }
 }
 
-  .flip-card-container .flip-card {
-    -webkit-animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-            animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-  }
+.flip-card-container .flip-card {
+  -webkit-animation: flip-vertical-right 0.4s
+    cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    both;
+}
