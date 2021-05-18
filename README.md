@@ -46,16 +46,16 @@ Download or clone the repo, type npm install, set up your database, seed the dat
 
 Contact us if you have any questions or want to provide feedback on our code.
 
-- [Rony Braswell]()
-- [Sam Gates]()
-- [Brian McMullen]()
-- [Abner Toribio]()
+- [Rony Braswell](https://github.com/ronyelon)
+- [Sam Gates](https://github.com/sg0703)
+- [Brian McMullen](https://github.com/MrBmmc)
+- [Abner Toribio](https://github.com/AbnerTor)
 
 ## License
 
 Copyright (c) Rony Braswell, Sam Gates, Brian McMullen, and Abner Toribio. All rights reserved.
 Licensed under the [MIT](https://opensource.org/licenses/MIT) license.
 
-link to pictures
+## Pictures
 
-https://i1.wp.com/www.superlativerecruitment.com/wp-content/uploads/2020/01/World-Map-PNG-Background-Image.png
+The background image used on our site can be downloaded [here](https://i1.wp.com/www.superlativerecruitment.com/wp-content/uploads/2020/01/World-Map-PNG-Background-Image.png).
