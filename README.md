@@ -41,9 +41,9 @@ To use the app, either look at our live demo version or create your own local ve
 
 The general public can access our Watson-powered lessons using the LoSiento API. User history is also available. User history can be accessed by user or by lesson. To receive a JSON list of all lessons, send a GET request to **_/api/lesson_**.
 
-To build an individual lesson with Watson, take the lesson ID from the /lesson/ response and send a POST request to **_/api/lesson/[lesson_id]_**. You will receive a JSON array with an object containing the English word or phrase paired with the Spanish word or phrase. You can then use this data in your own user interface.
+To build an individual lesson with Watson, take the lesson ID from the **_/api/lesson/_** response and send a POST request to **_/api/lesson/[lesson_id]_**. You will receive a JSON array with an object containing the English word or phrase paired with the Spanish word or phrase. You can then use this data in your own user interface.
 
-POST is used because there is future capcity to allow you to choose a language. This feature is not active yet.
+POST is used because there is future capacity to allow you to choose a language. This feature is not active yet.
 
 For History, the **_/api/history_** GET route will return the latest 20 updates to user activity. If you send a GET request to **_*/api/history/user/[user_id]*_** you can see the last 10 things that user did on the site. If you send a GET request to **_/api/history/lesson/[lesson_id]_** you can see the last 10 results for that history lesson, i.e. which users took that lesson recently.
 
