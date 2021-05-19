@@ -25,6 +25,14 @@ Our app also has an API that allows others to access our lesson plans. This offe
 
 Our app is currently deployed on Heroku and accessible to anyone to try out. Please visit https://losiento.herokuapp.com/ to see our app's functionality.
 
+The following API routes are active and available for use. Please see the API documentation below for more information.
+
+- GET /api/history/
+- GET /api/history/user/[user_id]
+- GET /api/history/lesson/[lesson_id]
+- GET /api/lesson/
+- POST /api/lesson/[lesson_id]
+
 ## Installation
 
 You can install this project by cloning our repo or downloading our files. Seed files are provided to populate the database with test users, some basic lessons, and sample history entries.
