@@ -8,11 +8,14 @@ LoSiento is a simple language learning app that utilizes the power of IBM's Wats
 
 The app utilizes a database of custom, ten-word lessons that are originally written in English. When a user selects a lesson, our API queries Watson and builds a flashcard based lesson for them. The front of the flashcard is the English word, and the back is Spanish. Our app keeps track of the lessons you complete, and displays user activity on the front page. All of this is done to encourage more learning. Quickly learn Spanish or keep your mind on Spanish while you're on the go!
 
+Our app also has an API that allows others to access our lesson plans. This offers the general public the same functionality we have on our site. Check out the API documentation below.
+
 ## Table of Contents
 
 - [Deployed](#deployed)
 - [Installation](#installation)
 - [Usage](#usage)
+- [API](#API)
 - [Contribute](#contribute)
 - [Test](#test)
 - [License](#license)
@@ -33,6 +36,16 @@ To use the app, either look at our live demo version or create your own local ve
 ![Screenshot 1](assets/images/screen1.png)
 ![Screenshot 2](assets/images/screen2.png)
 ![Screenshot 3](assets/images/screen3.png)
+
+## API
+
+The general public can access our Watson-powered lessons using the LoSiento API. User history is also available. User history can be accessed by user or by lesson. To receive a JSON list of all lessons, send a GET request to **_/api/lesson_**.
+
+To build an individual lesson with Watson, take the lesson ID from the /lesson/ response and send a POST request to **_/api/lesson/[lesson_id]_**. You will receive a JSON array with an object containing the English word or phrase paired with the Spanish word or phrase. You can then use this data in your own user interface.
+
+POST is used because there is future capcity to allow you to choose a language. This feature is not active yet.
+
+For History, the **_/api/history_** GET route will return the latest 20 updates to user activity. If you send a GET request to **_*/api/history/user/[user_id]*_** you can see the last 10 things that user did on the site. If you send a GET request to **_/api/history/lesson/[lesson_id]_** you can see the last 10 results for that history lesson, i.e. which users took that lesson recently.
 
 ## Contribute
 
